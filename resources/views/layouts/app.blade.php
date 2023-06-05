@@ -8,7 +8,9 @@
     <title>Atop Clean</title>
 </head>
 <body>
-    @include('components.sidebar')
+    <div class="float-left w-max">
+        @include('components.sidebar')
+    </div>
     @yield('main')
     <script src="https://cdn.tailwindcss.com"></script>
 </body>
