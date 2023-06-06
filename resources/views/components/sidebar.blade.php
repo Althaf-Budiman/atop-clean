@@ -1,7 +1,9 @@
 <div class="bg-[#55ACEE] flex flex-col h-screen">
     {{-- Image Logo --}}
     <div>
-        <img src="{{ asset('logo-atop.png') }}" alt="">
+        <a href="{{ url('/') }}">
+            <img src="{{ asset('logo-atop.png') }}" alt="">
+        </a>
     </div>
 
     {{-- Sidebar Item --}}
