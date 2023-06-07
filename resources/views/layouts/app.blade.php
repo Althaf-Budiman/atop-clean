@@ -11,6 +11,7 @@
             overflow: hidden;
         }
     </style>
+    @livewireStyles
 </head>
 <body>
     <div class="float-left w-max">
@@ -18,5 +19,6 @@
     </div>
     @yield('main')
     <script src="https://cdn.tailwindcss.com"></script>
+    @livewireScripts
 </body>
 </html>
