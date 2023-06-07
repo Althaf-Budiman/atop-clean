@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/tambah', [LaundryController::class, 'create']);
+
+Route::post('/tambah', [LaundryController::class, 'store']);

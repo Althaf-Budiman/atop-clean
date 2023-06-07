@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('laundries', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('customer');
+            $table->string('kategori');
+            $table->string('treatment');
+            $table->date('tanggal_ambil');
+            $table->unsignedBigInteger('harga');
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
     }
