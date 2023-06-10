@@ -21,11 +21,11 @@
 
                 <div>
                     <label for="kategori" class="text-gray-700 text-lg font-medium block">Pilih Kategori</label>
-                    <select name="kategori" id="kategori" class="block p-3 w-80 border border-gray-700">
-                        <option value="sepatu">Sepatu</option>
-                        <option value="tas">Tas</option>
-                        <option value="topi">Topi</option>
-                        <option value="helm">Helm</option>
+                    <select wire:model="selectedCategory" name="category_id" id="kategori" class="block p-3 w-80 border border-gray-700">
+                        <option selected value="">Choose Category</option>
+                        @foreach ($categories as $category)
+                            <option selected value="{{ $category->id }}">{{ $category->nama }}</option>
+                        @endforeach
                     </select>
                     @error('kategori')
                         <p class="text-red-600">{{ $message }}</p> 
@@ -34,8 +34,11 @@
                 
                 <div>
                     <label for="treatment" class="text-gray-700 text-lg font-medium block">Pilih Treatment</label>
-                    <select name="treatment" id="treatment" class="block p-3 w-80 border border-gray-700">
-                        <option value="eazt">Eazy (1 hari)</option>
+                    <select id="treatment" class="block p-3 w-80 border border-gray-700">
+                        <option selected value="">Choose treatment</option>
+                        @foreach ($treatments as $treatment)
+                            <option value="{{ $treatment->id }}">{{ $treatment->nama }}</option>
+                        @endforeach
                     </select>
                     @error('treatment')
                         <p class="text-red-600">{{ $message }}</p> 

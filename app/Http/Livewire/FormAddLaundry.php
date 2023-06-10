@@ -2,15 +2,28 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
+use App\Models\Treatment;
 use Livewire\Component;
 
 class FormAddLaundry extends Component
 {
-    public $kategori;
+    public $categories;
+    public $treatments;
 
-    public function mount() 
+    public $selectedCategory = null;
+
+    public function mount()
     {
-        
+        $this->categories = Category::all();
+        $this->treatments = collect();
+    }
+
+    public function updatedSelectedCategory($categoryId)
+    {
+        if (!is_null($categoryId)) {
+            $this->treatments = Treatment::where('category_id', $categoryId)->get();
+        }
     }
 
     public function render()
