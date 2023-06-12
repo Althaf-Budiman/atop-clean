@@ -33,11 +33,6 @@ class LaundryController extends Controller
         $treatmentObject = json_decode($request->treatment);
         $request['treatment'] = $treatmentObject->nama;
 
-        // Harga
-        // $request['harga'] = $treatmentObject->harga;
-
-        // Tanggal Ambil
-
         // Upload Image
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar')->store('gambar');
