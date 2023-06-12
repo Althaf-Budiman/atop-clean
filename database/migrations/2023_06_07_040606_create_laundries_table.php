@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('customer');
-            $table->foreignId('category_id')->constrained('categories');
+            $table->string('category');
+            $table->string('treatment');
             $table->date('tanggal_ambil');
+            $table->bigInteger('harga');
             $table->string('gambar')->nullable();
             $table->timestamps();
         });

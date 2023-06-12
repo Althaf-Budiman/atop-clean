@@ -18,21 +18,39 @@ class LaundryController extends Controller
         $request->validate([
             'nama' => 'required',
             'customer' => 'required',
-            'kategori' => 'required',
+            'category' => 'required',
             'treatment' => 'required',
             'tanggal_ambil' => 'required',
             'harga' => 'required',
             'gambar' => 'mimes:jpg,jpeg,png'
         ]);
 
+        // Category
+        $categoryObject = json_decode($request->category);
+        $request['category'] = $categoryObject->nama;
+        
+        // Treatment
+        $treatmentObject = json_decode($request->treatment);
+        $request['treatment'] = $treatmentObject->nama;
+
+        // Harga
+        // $request['harga'] = $treatmentObject->harga;
+
+        // Tanggal Ambil
+
         // Upload Image
-        $gambar = $request->gambar->store('gambar');
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar')->store('gambar');
+        } else {
+            $gambar = null;
+        }
+
 
         // Add data
         Laundry::create([
             'nama' => $request->nama,
             'customer' => $request->customer,
-            'kategori' => $request->kategori,
+            'category' => $request->category,
             'treatment' => $request->treatment,
             'tanggal_ambil' => $request->tanggal_ambil,
             'harga' => $request->harga,

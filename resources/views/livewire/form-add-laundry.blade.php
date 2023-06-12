@@ -21,29 +21,31 @@
 
                 <div>
                     <label for="kategori" class="text-gray-700 text-lg font-medium block">Pilih Kategori</label>
-                    <select wire:model="selectedCategory" name="category_id" id="kategori" class="block p-3 w-80 border border-gray-700">
-                        <option selected value="">Choose Category</option>
+                    <select wire:model="selectedCategory" name="category" id="kategori" class="block p-3 w-80 border border-gray-700">
+                        <option value="">Choose Category</option>
                         @foreach ($categories as $category)
-                            <option selected value="{{ $category->id }}">{{ $category->nama }}</option>
+                            <option value="{{ $category }}">{{ $category->nama }}</option>
                         @endforeach
                     </select>
-                    @error('kategori')
+                    @error('category')
                         <p class="text-red-600">{{ $message }}</p> 
                     @enderror
                 </div>
                 
-                <div>
-                    <label for="treatment" class="text-gray-700 text-lg font-medium block">Pilih Treatment</label>
-                    <select id="treatment" class="block p-3 w-80 border border-gray-700">
-                        <option selected value="">Choose treatment</option>
-                        @foreach ($treatments as $treatment)
-                            <option value="{{ $treatment->id }}">{{ $treatment->nama }}</option>
-                        @endforeach
-                    </select>
-                    @error('treatment')
+                @isset($selectedCategory)
+                    <div>
+                        <label for="treatment" class="text-gray-700 text-lg font-medium block">Pilih Treatment</label>
+                        <select id="treatment" name="treatment" class="block p-3 w-80 border border-gray-700">
+                            <option selected value="">Choose treatment</option>
+                            @foreach ($treatments as $treatment)
+                            <option value="{{ $treatment }}">{{ $treatment->nama }}</option>
+                            @endforeach
+                        </select>
+                        @error('treatment')
                         <p class="text-red-600">{{ $message }}</p> 
-                    @enderror
-                </div>
+                        @enderror
+                    </div>
+                @endisset
             </div>
 
             <div class="mb-10 w-[75vw] flex justify-center gap-10">

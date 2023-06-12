@@ -19,10 +19,11 @@ class FormAddLaundry extends Component
         $this->treatments = collect();
     }
 
-    public function updatedSelectedCategory($categoryId)
+    public function updatedSelectedCategory($category)
     {
-        if (!is_null($categoryId)) {
-            $this->treatments = Treatment::where('category_id', $categoryId)->get();
+        $categoryObject = json_decode($category);
+        if (!is_null($categoryObject)) {
+            $this->treatments = Treatment::where('category_id', $categoryObject->id)->get();
         }
     }
 

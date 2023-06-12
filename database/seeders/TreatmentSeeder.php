@@ -16,28 +16,28 @@ class TreatmentSeeder extends Seeder
         // Untuk Kategori Sepatu
         Treatment::create([
             'category_id' => 1,
-            'nama' => 'Eazy',
+            'nama' => 'Eazy (1 Hari)',
             'durasi' => 1,
             'harga' => 50000
         ]);
         
         Treatment::create([
             'category_id' => 1,
-            'nama' => 'Medium',
+            'nama' => 'Medium (3 Hari)',
             'durasi' => 3,
             'harga' => 40000
         ]);
 
         Treatment::create([
             'category_id' => 1,
-            'nama' => 'Medium (Sepatu Anak)',
+            'nama' => 'Medium (Sepatu Anak) (3 Hari)',
             'durasi' => 3,
             'harga' => 30000
         ]);
 
         Treatment::create([
             'category_id' => 1,
-            'nama' => 'Hard',
+            'nama' => 'Hard (5 Hari)',
             'durasi' => 5,
             'harga' => 70000
         ]);
@@ -45,21 +45,21 @@ class TreatmentSeeder extends Seeder
         // Untuk Kategori Tas
         Treatment::create([
             'category_id' => 2,
-            'nama' => 'Small',
+            'nama' => 'Small (5 Hari)',
             'durasi' => 5,
             'harga' => 65000
         ]);
 
         Treatment::create([
             'category_id' => 2,
-            'nama' => 'Medium',
+            'nama' => 'Medium (5 Hari)',
             'durasi' => 5,
             'harga' => 85000
         ]);
 
         Treatment::create([
             'category_id' => 2,
-            'nama' => 'Big',
+            'nama' => 'Big (7 Hari)',
             'durasi' => 7,
             'harga' => 135000
         ]);
@@ -67,7 +67,7 @@ class TreatmentSeeder extends Seeder
         // Untuk Kategori Topi
         Treatment::create([
             'category_id' => 3,
-            'nama' => 'Any',
+            'nama' => 'Any (2 Hari)',
             'durasi' => 2,
             'harga' => 35000
         ]);
@@ -75,14 +75,14 @@ class TreatmentSeeder extends Seeder
         // Untuk Kategori Helm
         Treatment::create([
             'category_id' => 4,
-            'nama' => 'Express',
+            'nama' => 'Express (3-4 Jam)',
             'durasi' => 0,
             'harga' => 45000
         ]);
 
         Treatment::create([
             'category_id' => 4,
-            'nama' => 'Standard',
+            'nama' => 'Standard (1 Hari)',
             'durasi' => 1,
             'harga' => 35000
         ]);
