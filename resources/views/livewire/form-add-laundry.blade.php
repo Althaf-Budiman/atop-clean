@@ -35,7 +35,7 @@
                 @isset($selectedCategory)
                     <div>
                         <label for="treatment" class="text-gray-700 text-lg font-medium block">Pilih Treatment</label>
-                        <select id="treatment" name="treatment" class="block p-3 w-80 border border-gray-700">
+                        <select id="treatment" wire:model="selectedTreatment" name="treatment" class="block p-3 w-80 border border-gray-700">
                             <option selected value="">Choose treatment</option>
                             @foreach ($treatments as $treatment)
                             <option value="{{ $treatment }}">{{ $treatment->nama }}</option>
@@ -51,14 +51,14 @@
             <div class="mb-10 w-[75vw] flex justify-center gap-10">
                 <div>
                     <label for="tanggal_ambil" class="text-gray-700 text-lg font-medium block">Tanggal Ambil</label>
-                    <input type="date" name="tanggal_ambil" id="tanggal_ambil" class="block p-3 w-80 border border-gray-700"></input>
+                    <input type="date" name="tanggal_ambil" id="tanggal_ambil" class="block p-3 w-80 border border-gray-700" value="{{ $tanggalAmbilValue }}" />
                     @error('tanggal_ambil')
                        <p class="text-red-600">{{ $message }}</p> 
                     @enderror
                 </div>
                 <div>
                     <label for="harga" class="text-gray-700 text-lg font-medium block">Harga</label>
-                    <input type="number" name="harga" id="harga" class="block p-3 w-80 border border-gray-700 text-green-600"></input>
+                    <input type="number" name="harga" id="harga" class="block p-3 w-80 border border-gray-700 text-green-600" value="{{ $hargaValue }}" />
                     @error('harga')
                        <p class="text-red-600">{{ $message }}</p> 
                     @enderror
