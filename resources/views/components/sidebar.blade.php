@@ -1,4 +1,4 @@
-<div class="drawer-open drawer sticky left-0">
+<div class="drawer-open drawer">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
         <!-- Page content here -->
