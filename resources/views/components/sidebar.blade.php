@@ -1,39 +1,69 @@
-<div class="bg-[#55ACEE] flex flex-col h-screen">
-    {{-- Image Logo --}}
-    <div>
-        <a href="{{ url('/') }}">
-            <img src="{{ asset('logo-atop.png') }}" alt="">
-        </a>
+<div class="drawer-open drawer">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+        <!-- Page content here -->
     </div>
-
     {{-- Sidebar Item --}}
-    <div class="flex flex-col">
-
-        <a href="{{ url('/') }}">
-            <div class="flex items-center p-3 justify-center gap-2 hover:bg-[#226699] w-full">
-                <i class="bi bi-journal-text text-2xl"></i>
-                <p class="font-medium">Daftar Pesanan</p>
+    <div class="drawer-side">
+        <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+            {{-- Image Logo --}}
+            <div class="flex justify-center">
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('logo-atop.png') }}" alt="" />
+                </a>
             </div>
-        </a>
-        <a href="{{ url('/tambah') }}">
-            <div class="flex items-center p-3 justify-center gap-2 hover:bg-[#226699] w-full">
-                <i class="bi bi-file-plus text-2xl"></i>
-                <p class="font-medium">Tambah Pesanan</p>
-            </div>
-        </a>
-        <a href="">
-            <div class="flex items-center p-3 justify-center gap-2 hover:bg-[#226699] w-full">
-                <i class="bi bi-clock-history text-2xl"></i>
-                <p class="font-medium">Histori</p>
-            </div>
-        </a>
-        <a href="">
-            <div class="flex items-center p-3 justify-center gap-2 hover:bg-[#226699] w-full">
-                <i class="bi bi-bar-chart text-2xl"></i>
-                <p class="font-medium">Laporan</p>
-            </div>
-        </a>
-
+            <li>
+                <a href="{{ url('/') }}">
+                    <div
+                        class="flex items-center p-3 justify-center gap-2 w-full"
+                    >
+                        <i class="bi bi-journal-text text-2xl"></i>
+                        <p class="font-medium">Daftar Pesanan</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/tambah') }}">
+                    <div
+                        class="flex items-center p-3 justify-center gap-2 w-full"
+                    >
+                        <i class="bi bi-file-plus text-2xl"></i>
+                        <p class="font-medium">Tambah Pesanan</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div
+                        class="flex items-center p-3 justify-center gap-2 w-full"
+                    >
+                        <i class="bi bi-clock-history text-2xl"></i>
+                        <p class="font-medium">Histori</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div
+                        class="flex items-center p-3 justify-center gap-2 w-full"
+                    >
+                        <i class="bi bi-bar-chart text-2xl"></i>
+                        <p class="font-medium">Laporan</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
-
 </div>
+
+{{--
+<div class="drawer lg:drawer-open">
+    <div class="drawer-side">
+        <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+            <!-- Sidebar content here -->
+            <li><a>Sidebar Item 1</a></li>
+            <li><a>Sidebar Item 2</a></li>
+        </ul>
+    </div>
+</div>
+--}}
