@@ -58,7 +58,7 @@
                 </div>
                 <div>
                     <label for="harga" class="text-gray-700 text-lg font-medium block">Harga</label>
-                    <input type="number" name="harga" id="harga" class="block p-3 w-80 border border-gray-700 text-green-600" value="{{ $hargaValue }}" />
+                    <input type="number" name="harga" id="harga" class="block p-3 w-80 border border-gray-700 text-green-600" value="{{ number_format($hargaValue, 0, '.', '.'); }}" />
                     @error('harga')
                        <p class="text-red-600">{{ $message }}</p> 
                     @enderror
