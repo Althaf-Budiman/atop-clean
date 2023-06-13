@@ -1,6 +1,6 @@
 module.exports = {
     //...
     daisyui: {
-        themes: ["pastel"],
+        themes: ["winter"],
     },
 };

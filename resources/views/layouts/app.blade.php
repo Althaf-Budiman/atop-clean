@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="pastel">
+<html lang="en" data-theme="winter">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
     <body>
         <div class="flex">
             <!-- Sidebar -->
-            <div class="w-[22%]">
+            <div class="w-72">
                 <div class="sticky top-0 h-screen">
                     <!-- Sidebar content here -->
                     <div class="menu bg-base-200 flex flex-col h-[100vh]">
