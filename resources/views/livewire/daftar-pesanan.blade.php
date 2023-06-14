@@ -53,7 +53,11 @@
                         <p class="font-medium text-xl text-green-600"><b>Rp. {{ number_format($laundry->harga, 0, ".", "."); }}</b></p>
                         <div class="modal-action">
                             <label for="modal_detail_{{ $laundry->id }}" class="btn btn-primary w-32">Tutup</label>
-                            <button type="submit" class="btn btn-error w-32">Hapus</button>
+                            <form action='{{ url("/index/$laundry->id") }}' method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-error w-32">Hapus</button>
+                            </form>
                         </div>
                     </div>
                 </div>

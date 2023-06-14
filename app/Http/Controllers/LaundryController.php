@@ -28,7 +28,7 @@ class LaundryController extends Controller
         // Category
         $categoryObject = json_decode($request->category);
         $request['category'] = $categoryObject->nama;
-        
+
         // Treatment
         $treatmentObject = json_decode($request->treatment);
         $request['treatment'] = $treatmentObject->nama;
@@ -52,5 +52,11 @@ class LaundryController extends Controller
             'gambar' => $gambar
         ]);
         return redirect('/');
+    }
+
+    public function delete($id)
+    {
+        Laundry::findOrFail($id)->delete();
+        return redirect('/index');
     }
 }
