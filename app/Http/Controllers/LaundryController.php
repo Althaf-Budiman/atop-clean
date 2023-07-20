@@ -57,6 +57,6 @@ class LaundryController extends Controller
     public function delete($id)
     {
         Laundry::findOrFail($id)->delete();
-        return redirect('/index');
+        return redirect('/');
     }
 }

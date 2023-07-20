@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('laundry.index');
 });
 
@@ -23,4 +23,4 @@ Route::get('/tambah', [LaundryController::class, 'create']);
 
 Route::post('/tambah', [LaundryController::class, 'store']);
 
-Route::delete('/index/{id}', [LaundryController::class, 'delete']);
+Route::delete('/{id}', [LaundryController::class, 'delete']);

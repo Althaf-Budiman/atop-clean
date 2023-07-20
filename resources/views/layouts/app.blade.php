@@ -20,7 +20,7 @@
                     <div class="menu bg-base-200 flex flex-col h-[100vh]">
                         <!-- Image Logo -->
                         <div class="flex justify-center">
-                            <a href="{{ url('/index') }}">
+                            <a href="{{ url('/') }}">
                                 <img
                                     src="{{ asset('logo-atop.png') }}"
                                     alt=""
@@ -31,7 +31,7 @@
                         <!-- Sidebar Items -->
                         <ul>
                             <li>
-                                <a href="{{ url('/index') }}">
+                                <a href="{{ url('/') }}">
                                     <div
                                         class="flex items-center p-3 justify-center gap-2"
                                     >
