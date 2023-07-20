@@ -1,5 +1,12 @@
-<div class="flex p-5 flex-wrap justify-center gap-10">
+{{-- Search Bar --}}
+<div class="p-3">
+    <form action="">
+        <input type="text" placeholder="Cari Data" class="block pl-10 w-full input input-primary" name="search">
+    </form>
+</div>
+{{-- End Of Search Bar --}}
 
+<div class="flex p-5 flex-wrap justify-center gap-10">
     @foreach ($laundries as $laundry)
     {{-- Card --}}
     <label for="modal_detail_{{ $laundry->id }}">
