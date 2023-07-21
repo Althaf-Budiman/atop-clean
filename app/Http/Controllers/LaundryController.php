@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class LaundryController extends Controller
 {
+    public function index()
+    {
+        $laundries = Laundry::all();
+        return view('laundry.index', compact('laundries'));
+    }
+
     public function create()
     {
         return view('laundry.add-laundry');
@@ -66,7 +72,6 @@ class LaundryController extends Controller
             $searchLaundry = Laundry::where('name', 'LIKE', "%$request->search");
             return view('laundry.daftar-pesanan-result', compact('searchLaundry'));
         } else {
-
         }
     }
 }

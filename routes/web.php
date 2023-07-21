@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('laundry.index');
-});
+Route::get('/', [LaundryController::class, 'index']);
 
 Route::get('/tambah', [LaundryController::class, 'create']);
 
