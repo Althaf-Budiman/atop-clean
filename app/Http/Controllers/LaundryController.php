@@ -59,4 +59,14 @@ class LaundryController extends Controller
         Laundry::findOrFail($id)->delete();
         return redirect('/');
     }
+
+    public function search(Request $request)
+    {
+        if ($request->search) {
+            $searchLaundry = Laundry::where('name', 'LIKE', "%$request->search");
+            return view('laundry.daftar-pesanan-result', compact('searchLaundry'));
+        } else {
+
+        }
+    }
 }

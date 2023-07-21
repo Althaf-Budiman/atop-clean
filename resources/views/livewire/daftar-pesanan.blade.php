@@ -1,7 +1,7 @@
 {{-- Search Bar --}}
 <div class="p-3">
-    <form action="">
-        <input type="text" placeholder="Cari Data" class="block pl-10 w-full input input-primary" name="search">
+    <form action="{{ url('/search') }}" method="GET">
+        <input type="search" placeholder="Cari Data" value="" class="block pl-10 w-full input input-primary" name="search">
     </form>
 </div>
 {{-- End Of Search Bar --}}
