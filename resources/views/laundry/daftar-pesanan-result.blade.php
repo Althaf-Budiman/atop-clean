@@ -8,6 +8,8 @@
     </div>
     {{-- End Of Search Bar --}}
 
+    <h1 class="ml-5 mt-2 text-xl font-semibold">Hasil Pencarian</h1>
+
     <div class="flex p-5 flex-wrap justify-center gap-10">
         @foreach ($laundries as $laundry)
         {{-- Card --}}

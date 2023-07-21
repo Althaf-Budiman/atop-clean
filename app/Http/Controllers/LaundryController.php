@@ -69,9 +69,10 @@ class LaundryController extends Controller
     public function search(Request $request)
     {
         if ($request->search) {
-            $searchLaundry = Laundry::where('name', 'LIKE', "%$request->search");
-            return view('laundry.daftar-pesanan-result', compact('searchLaundry'));
+            $laundries = Laundry::where('nama', 'LIKE', "%$request->search%")->get();
+            return view('laundry.daftar-pesanan-result', compact('laundries'));
         } else {
+            return redirect('/');
         }
     }
 }
