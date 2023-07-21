@@ -3,7 +3,7 @@
     {{-- Search Bar --}}
     <div class="p-3">
         <form action="{{ url('/search') }}" method="GET">
-            <input type="search" placeholder="Cari Laundry Berdasarkan Nama Laundry" value="" class="block w-full input input-primary" name="search">
+            <input type="search" placeholder="Cari Laundry Berdasarkan Nama Laundry" value="{{ $searchValue }}" class="block w-full input input-primary" name="search">
         </form>
     </div>
     {{-- End Of Search Bar --}}

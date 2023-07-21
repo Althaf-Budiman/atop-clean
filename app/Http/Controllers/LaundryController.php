@@ -70,7 +70,7 @@ class LaundryController extends Controller
     {
         if ($request->search) {
             $laundries = Laundry::where('nama', 'LIKE', "%$request->search%")->get();
-            return view('laundry.daftar-pesanan-result', compact('laundries'));
+            return view('laundry.daftar-pesanan-result', ['laundries' => $laundries, 'searchValue' => $request->search]);
         } else {
             return redirect('/');
         }
