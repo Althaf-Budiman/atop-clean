@@ -37,19 +37,35 @@
                     </div>
                 </div>
                 {{-- Button Done --}}
-                <form action="{{ url("/$laundry->id") }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <div class="bg-green-600 text-white font-semibold text-center text-5xl">
-                        <button type="submit" class="h-14 w-full object-cover">
-                            <i class="bi bi-check"></i>
-                        </button>
+                <label for="modal_done_{{ $laundry->id }}">
+                    <div class="bg-green-600 text-white font-semibold text-center text-5xl h-14 w-full object-cover hover:cursor-pointer">
+                        <i class="bi bi-check"></i>
                     </div>
-                </form>
+                </label>
                 {{-- End Button Done --}}
             </div>
         </label>
         {{-- End Card --}}
+
+        {{-- Modal Done --}}
+        <input type="checkbox" id="modal_done_{{ $laundry->id }}" class="modal-toggle" />
+            <div class="modal">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold text-center">Apakah Anda Yakin Sudah Menyelesaikan "{{ $laundry->nama }}"?</h3>
+                    <div class="justify-center flex pt-4 gap-2">
+                        <label for="modal_done_{{ $laundry->id }}" class="btn btn-primary w-32">Belum</label>
+                        <form action="{{ url("/$laundry->id") }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="h-14 w-full object-cover btn btn-success">
+                                Sudah
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <label class="modal-backdrop" for="modal_done_{{ $laundry->id }}"></label>
+        </div>
+        {{-- End Modal Done --}}
 
         {{-- Modal Detail --}}
         <input type="checkbox" class="modal-toggle" id="modal_detail_{{ $laundry->id }}">
