@@ -10,7 +10,7 @@
         <h1 class="text-lg text-gray-400">Barang yang selesai di laundry akan tampil disini.</h1>
     </div>
 
-    <div class="flex p-5 flex-wrap justify-center gap-10">
+    <div class="flex p-5 flex-wrap justify-start gap-10">
         @foreach ($laundries as $laundry)
         {{-- Card --}}
             <div class="card card-compact shadow-lg w-64 overflow-hidden">
@@ -50,7 +50,6 @@
                 {{-- End Button Delete --}}
             </div>
         {{-- End Card --}}
-        </div>
         @endforeach
     </div>
 @endsection
