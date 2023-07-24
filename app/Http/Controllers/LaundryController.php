@@ -75,4 +75,13 @@ class LaundryController extends Controller
             return redirect('/');
         }
     }
+
+    public function done($id)
+    {
+        $doneLaundry = Laundry::find($id);
+        $doneLaundry->update([
+            'done' => true
+        ]);
+        return redirect('/');
+    }
 }

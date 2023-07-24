@@ -36,6 +36,17 @@
                         <p class="font-medium text-xl text-green-600"><b>Rp. {{ number_format($laundry->harga, 0, ".", "."); }}</b></p>
                     </div>
                 </div>
+                {{-- Button Done --}}
+                <form action="{{ url("/$laundry->id") }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <div class="bg-green-600 text-white font-semibold text-center text-5xl">
+                        <button type="submit" class="h-14 w-full object-cover">
+                            <i class="bi bi-check"></i>
+                        </button>
+                    </div>
+                </form>
+                {{-- End Button Done --}}
             </div>
         </label>
         {{-- End Card --}}
