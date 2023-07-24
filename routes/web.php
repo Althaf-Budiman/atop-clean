@@ -28,3 +28,5 @@ Route::get('/search', [LaundryController::class, 'search']);
 Route::patch('/{id}', [LaundryController::class, 'done']);
 
 Route::get('/history', [LaundryController::class, 'history']);
+
+Route::delete('/history/{id}', [LaundryController::class, 'historyDelete']);
