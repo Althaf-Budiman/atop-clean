@@ -9,7 +9,7 @@ class LaundryController extends Controller
 {
     public function index()
     {
-        $laundries = Laundry::all();
+        $laundries = Laundry::where('done', false)->get();
         return view('laundry.index', compact('laundries'));
     }
 
