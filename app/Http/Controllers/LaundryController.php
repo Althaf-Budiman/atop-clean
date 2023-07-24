@@ -84,4 +84,9 @@ class LaundryController extends Controller
         ]);
         return redirect('/');
     }
+
+    public function history()
+    {
+        return view('laundry.history-laundry');
+    }
 }
