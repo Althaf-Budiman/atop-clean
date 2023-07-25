@@ -12,33 +12,35 @@
         @foreach ($laundries as $laundry)
         {{-- Card --}}
         <label for="modal_detail_{{ $laundry->id }}">
-            <div class="card card-compact shadow-lg w-64 overflow-hidden hover:cursor-pointer hover:opacity-80 hover:bg-gray-100 transition">
-                @isset($laundry->gambar)
-                    <img src="{{ asset('storage/' . $laundry->gambar) }}" class="h-40 w-full object-cover">
-                    @else
-                    <div class="h-40 w-full object-cover bg-gray-500 text-black font-semibold text-center leading-[10rem]">No Image</div>
-                @endisset
-                <div class="card-body">
-                    <h2 class="text-xl font-semibold whitespace-nowrap text-ellipsis overflow-hidden">{{ $laundry->nama }}</h2>
-                    <div class="flex">
-                        <p class="whitespace-nowrap text-ellipsis overflow-hidden">Customer: <b>{{ $laundry->customer }}</b></p>
-                    </div>
-                    <div class="flex">
-                        <p>Tanggal Ambil: <b>{{ $laundry->tanggal_ambil }}</b></p>
-                    </div>
-                    <div class="flex">
-                        <p>Category: <b>{{ $laundry->category }}</b></p>
-                    </div>
-                    <div class="flex justify-between">
-                        <p>Treatment: <b>{{ preg_replace("/\([^()]*\)/", "", $laundry->treatment); }}</b></p>
-                    </div>
-                    <div class="flex">
-                        <p class="font-medium text-xl text-green-600"><b>Rp. {{ number_format($laundry->harga, 0, ".", "."); }}</b></p>
+            <div class="card card-compact shadow-lg w-64 overflow-hidden">
+                <div class="hover:cursor-pointer hover:opacity-80 hover:bg-gray-100 transition">
+                    @isset($laundry->gambar)
+                        <img src="{{ asset('storage/' . $laundry->gambar) }}" class="h-40 w-full object-cover">
+                        @else
+                        <div class="h-40 w-full object-cover bg-gray-500 text-black font-semibold text-center leading-[10rem]">No Image</div>
+                    @endisset
+                    <div class="card-body">
+                        <h2 class="text-xl font-semibold whitespace-nowrap text-ellipsis overflow-hidden">{{ $laundry->nama }}</h2>
+                        <div class="flex">
+                            <p class="whitespace-nowrap text-ellipsis overflow-hidden">Customer: <b>{{ $laundry->customer }}</b></p>
+                        </div>
+                        <div class="flex">
+                            <p>Tanggal Ambil: <b>{{ $laundry->tanggal_ambil }}</b></p>
+                        </div>
+                        <div class="flex">
+                            <p>Category: <b>{{ $laundry->category }}</b></p>
+                        </div>
+                        <div class="flex justify-between">
+                            <p>Treatment: <b>{{ preg_replace("/\([^()]*\)/", "", $laundry->treatment); }}</b></p>
+                        </div>
+                        <div class="flex">
+                            <p class="font-medium text-xl text-green-600"><b>Rp. {{ number_format($laundry->harga, 0, ".", "."); }}</b></p>
+                        </div>
                     </div>
                 </div>
                 {{-- Button Done --}}
                 <label for="modal_done_{{ $laundry->id }}">
-                    <div class="bg-green-600 text-white font-semibold text-center text-5xl h-14 w-full object-cover hover:cursor-pointer">
+                    <div class="bg-green-600 text-white font-semibold text-center text-5xl h-14 w-full object-cover hover:cursor-pointer hover:opacity-80 transition">
                         <i class="bi bi-check"></i>
                     </div>
                 </label>
