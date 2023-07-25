@@ -87,7 +87,7 @@ class LaundryController extends Controller
 
     public function history()
     {
-        $laundries = Laundry::where('done', true)->get();
+        $laundries = Laundry::where('done', true)->latest()->get();
         return view('laundry.history-laundry', compact('laundries'));
     }
 
