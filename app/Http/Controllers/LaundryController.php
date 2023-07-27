@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Laundry;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LaundryController extends Controller
@@ -80,7 +81,8 @@ class LaundryController extends Controller
     {
         $doneLaundry = Laundry::find($id);
         $doneLaundry->update([
-            'done' => true
+            'done' => true,
+            'done_date' => Carbon::today(),
         ]);
         return redirect('/');
     }

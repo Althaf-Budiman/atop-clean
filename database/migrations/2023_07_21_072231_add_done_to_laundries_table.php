@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('laundries', function (Blueprint $table) {
             // false itu 0, true itu 1.
             $table->boolean('done')->default(false)->after('gambar');
+            $table->date('done_date')->nullable()->default(null)->after('done');
         });
     }
 
