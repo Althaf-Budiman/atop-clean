@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ url('/laporan') }}">
                                     <div
                                         class="flex items-center p-3 justify-center gap-2"
                                     >

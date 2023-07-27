@@ -96,4 +96,9 @@ class LaundryController extends Controller
         Laundry::findOrFail($id)->delete();
         return redirect('/history');
     }
+
+    public function laporan()
+    {
+        return view('laundry.laporan');
+    }
 }
