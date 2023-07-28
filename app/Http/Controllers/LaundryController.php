@@ -93,14 +93,27 @@ class LaundryController extends Controller
         return view('laundry.history-laundry', compact('laundries'));
     }
 
-    public function historyDelete($id)
-    {
-        Laundry::findOrFail($id)->delete();
-        return redirect('/history');
-    }
-
     public function laporan()
     {
-        return view('laundry.laporan');
+        // Data Hari Ini
+        $today = Carbon::today();
+        $todayLaundries = Laundry::whereDate('done_date', $today)->get();
+
+        // Data Minggu Ini
+        $startOfWeek = Carbon::now()->startOfWeek();
+        $endOfWeek = Carbon::now()->endOfWeek();
+        $weekLaundries = Laundry::whereBetween('done_date', [$startOfWeek, $endOfWeek])->get();
+
+        // Data Bulan Ini
+        $startOfMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+        $monthLaundries = Laundry::whereBetween('done_date', [$startOfMonth, $endOfMonth])->get();
+
+        return view('laundry.laporan', [
+            // Total Pesanan
+            'totalTodayLaundries' => count($todayLaundries),
+            'totalWeekLaundries' => count($weekLaundries),
+            'totalMonthLaundries' => count($monthLaundries)
+        ]);
     }
 }

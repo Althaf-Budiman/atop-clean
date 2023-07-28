@@ -37,17 +37,6 @@
                         <p class="font-medium text-xl text-green-600"><b>Rp. {{ number_format($laundry->harga, 0, ".", "."); }}</b></p>
                     </div>
                 </div>
-                {{-- Button Delete --}}
-                <form action="{{ url("history/$laundry->id") }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <div class="bg-red-600 text-white font-semibold text-center text-3xl hover:cursor-pointer hover:opacity-80 transition">
-                        <button type="submit" class="h-14 w-full object-cover">
-                            <i class="bi bi-trash3"></i>
-                        </button>
-                    </div>
-                </form>
-                {{-- End Button Delete --}}
             </div>
         {{-- End Card --}}
         @endforeach
