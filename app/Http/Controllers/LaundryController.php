@@ -95,25 +95,48 @@ class LaundryController extends Controller
 
     public function laporan()
     {
-        // Data Hari Ini
+        // Variable Hari-hari
         $today = Carbon::today();
+
+        $startOfWeek = Carbon::now()->startOfWeek();
+        $endOfWeek = Carbon::now()->endOfWeek();
+
+        $startOfMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+
+        // Data Hari Ini
         $todayLaundries = Laundry::whereDate('done_date', $today)->get();
 
         // Data Minggu Ini
-        $startOfWeek = Carbon::now()->startOfWeek();
-        $endOfWeek = Carbon::now()->endOfWeek();
         $weekLaundries = Laundry::whereBetween('done_date', [$startOfWeek, $endOfWeek])->get();
 
         // Data Bulan Ini
-        $startOfMonth = Carbon::now()->startOfMonth();
-        $endOfMonth = Carbon::now()->endOfMonth();
         $monthLaundries = Laundry::whereBetween('done_date', [$startOfMonth, $endOfMonth])->get();
+
+        // Penghasilan Hari Ini
+        foreach ($todayLaundries as $todayLaundry) {
+            $incomeToday[] = $todayLaundry->harga;
+        }
+
+        // Penghasilan Minggu Ini
+        foreach ($weekLaundries as $weekLaundry) {
+            $incomeWeek[] = $weekLaundry->harga;
+        }
+
+        // Penghasilan Bulan Ini
+        foreach ($monthLaundries as $monthLaundry) {
+            $incomeMonth[] = $monthLaundry->harga;
+        }
 
         return view('laundry.laporan', [
             // Total Pesanan
             'totalTodayLaundries' => count($todayLaundries),
             'totalWeekLaundries' => count($weekLaundries),
-            'totalMonthLaundries' => count($monthLaundries)
+            'totalMonthLaundries' => count($monthLaundries),
+
+            'totalIncomeToday' => array_sum($incomeToday),
+            'totalIncomeWeek' => array_sum($incomeWeek),
+            'totalIncomeMonth' => array_sum($incomeMonth),
         ]);
     }
 }
