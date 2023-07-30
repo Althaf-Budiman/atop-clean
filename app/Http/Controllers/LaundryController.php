@@ -114,16 +114,19 @@ class LaundryController extends Controller
         $monthLaundries = Laundry::whereBetween('done_date', [$startOfMonth, $endOfMonth])->get();
 
         // Penghasilan Hari Ini
+        $incomeToday[] = 0; 
         foreach ($todayLaundries as $todayLaundry) {
             $incomeToday[] = $todayLaundry->harga;
         }
-
+        
         // Penghasilan Minggu Ini
+        $incomeWeek[] = 0; 
         foreach ($weekLaundries as $weekLaundry) {
             $incomeWeek[] = $weekLaundry->harga;
         }
-
+        
         // Penghasilan Bulan Ini
+        $incomeMonth[] = 0; 
         foreach ($monthLaundries as $monthLaundry) {
             $incomeMonth[] = $monthLaundry->harga;
         }
