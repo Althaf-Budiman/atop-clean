@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('main')
     
-<div class="flex justify-center pt-8">
+<div class="flex justify-center pt-8 text-center">
     <h1 class="text-3xl text-gray-600">Tambah Pesanan Laundry</h1>
 </div>
 <div class="flex justify-center">

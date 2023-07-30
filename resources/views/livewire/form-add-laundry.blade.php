@@ -1,4 +1,4 @@
-<div class="flex p-5">
+<div class="flex p-3 md:p-5">
         <form action="{{ url('/tambah') }}" method="POST" enctype="multipart/form-data" class="form-control">
             @csrf
             <div class="mb-4 w-[75vw]">
@@ -17,11 +17,11 @@
                 @enderror
             </div>
 
-            <div class="mb-4 w-[75vw] flex justify-center gap-10">
+            <div class="mb-4 w-[75vw] flex justify-center gap-10 flex-col md:flex-row">
 
                 <div>
                     <label for="kategori" class="text-gray-700 text-lg font-medium block">Pilih Kategori</label>
-                    <select wire:model="selectedCategory" name="category" id="kategori" class="block p-3 w-80 select select-primary">
+                    <select wire:model="selectedCategory" name="category" id="kategori" class="block p-3 w-full md:w-80 select select-primary">
                         <option value="">Choose Category</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category }}">{{ $category->nama }}</option>
@@ -35,7 +35,7 @@
                 @isset($selectedCategory)
                     <div>
                         <label for="treatment" class="text-gray-700 text-lg font-medium block">Pilih Treatment</label>
-                        <select id="treatment" wire:model="selectedTreatment" name="treatment" class="block p-3 w-80 select select-primary">
+                        <select id="treatment" wire:model="selectedTreatment" name="treatment" class="block p-3 w-full md:w-80 select select-primary">
                             <option selected value="">Choose treatment</option>
                             @foreach ($treatments as $treatment)
                             <option value="{{ $treatment }}">{{ $treatment->nama }}</option>
@@ -48,17 +48,17 @@
                 @endisset
             </div>
 
-            <div class="mb-10 w-[75vw] flex justify-center gap-10">
+            <div class="mb-10 w-[75vw] flex justify-center gap-10 flex-col md:flex-row">
                 <div>
                     <label for="tanggal_ambil" class="text-gray-700 text-lg font-medium block">Tanggal Ambil</label>
-                    <input type="date" name="tanggal_ambil" id="tanggal_ambil" class="block p-3 w-80 input input-primary" value="{{ $tanggalAmbilValue }}" />
+                    <input type="date" name="tanggal_ambil" id="tanggal_ambil" class="block p-3 w-full md:w-80 input input-primary" value="{{ $tanggalAmbilValue }}" />
                     @error('tanggal_ambil')
                        <p class="text-red-600">{{ $message }}</p> 
                     @enderror
                 </div>
                 <div>
                     <label for="harga" class="text-gray-700 text-lg font-medium block">Harga</label>
-                    <input type="number" name="harga" id="harga" class="block p-3 w-80 input input-primary text-green-600" value="{{ $hargaValue }}" />
+                    <input type="number" name="harga" id="harga" class="block p-3 w-full md:w-80 input input-primary text-green-600" value="{{ $hargaValue }}" />
                     @error('harga')
                        <p class="text-red-600">{{ $message }}</p> 
                     @enderror
@@ -72,7 +72,7 @@
                    <p class="text-red-600">{{ $message }}</p> 
                 @enderror
 
-                <button type="submit" class="float-right p-3 btn mr-3 btn-primary">Tambah Laundry</button>
+                <button type="submit" class="float-right p-3 btn mr-3 btn-primary mt-5 md:mt-0">Tambah Laundry</button>
             </div>
         </form>
     </div>

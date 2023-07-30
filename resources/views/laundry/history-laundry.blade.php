@@ -7,7 +7,7 @@
         <div class="border border-base-300 my-1 w-96"></div>
     </div>
     <div class="flex justify-center">
-        <h1 class="text-lg text-gray-400">Barang yang selesai di laundry akan tampil disini.</h1>
+        <h1 class="text-lg text-gray-400 text-center">Barang yang selesai di laundry akan tampil disini.</h1>
     </div>
 
     <div class="flex p-5 flex-wrap justify-start gap-10">

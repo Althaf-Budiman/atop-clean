@@ -8,7 +8,7 @@
     </div>
     {{-- End Of Search Bar --}}
 
-    <div class="flex p-5 flex-wrap justify-center gap-10">
+    <div class="flex p-5 flex-wrap justify-center gap-10 flex-col md:flex-row">
         @foreach ($laundries as $laundry)
         {{-- Card --}}
         <label for="modal_detail_{{ $laundry->id }}">
@@ -73,7 +73,7 @@
         <input type="checkbox" class="modal-toggle" id="modal_detail_{{ $laundry->id }}">
             <div class="modal">
                 <div class="modal-box">
-                    <div class="flex gap-5">
+                    <div class="flex flex-col md:flex-row gap-5">
                         <div class="flex flex-col">
                             @isset($laundry->gambar)
                                 <img src="{{ asset('storage/' . $laundry->gambar) }}" class="rounded-lg h-56 w-52">
