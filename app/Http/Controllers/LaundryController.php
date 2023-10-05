@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Laundry;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class LaundryController extends Controller
 {
     public function index()
     {
-        $laundries = Laundry::where('done', false)->orderByDesc('created_at')->get();
-        return view('laundry.index', compact('laundries'));
+        // $laundries = Laundry::where('done', false)->orderByDesc('created_at')->get();
+        // return view('laundry.index', compact('laundries'));
+        return Inertia::render('Main');
     }
 
     public function create()
