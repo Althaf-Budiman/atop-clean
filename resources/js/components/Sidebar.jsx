@@ -6,14 +6,14 @@ export default function Sidebar() {
             <div className="sticky top-0 h-screen">
                 <div className="menu bg-base-200 flex flex-col h-[100vh]">
                     <div className="flex justify-center">
-                        <a href="{{ url('/') }}">
-                            <img src="{{ asset('logo-atop.png') }}" alt="" />
+                        <a href="/">
+                            <img src="logo-atop.png" alt="" />
                         </a>
                     </div>
 
                     <ul>
                         <li>
-                            <a href="{{ url('/') }}">
+                            <a href="/">
                                 <div className="flex items-center p-3 justify-center gap-2">
                                     <i className="bi bi-journal-text text-2xl"></i>
                                     <p className="font-medium">
@@ -23,7 +23,7 @@ export default function Sidebar() {
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('/tambah') }}">
+                            <a href="/tambah">
                                 <div className="flex items-center p-3 justify-center gap-2">
                                     <i className="bi bi-file-plus text-2xl"></i>
                                     <p className="font-medium">
@@ -33,7 +33,7 @@ export default function Sidebar() {
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('/history') }}">
+                            <a href="/history">
                                 <div className="flex items-center p-3 justify-center gap-2">
                                     <i className="bi bi-clock-history text-2xl"></i>
                                     <p className="font-medium">
@@ -43,7 +43,7 @@ export default function Sidebar() {
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('/laporan') }}">
+                            <a href="/laporan">
                                 <div className="flex items-center p-3 justify-center gap-2">
                                     <i className="bi bi-bar-chart text-2xl"></i>
                                     <p className="font-medium">

@@ -15,41 +15,6 @@
 </head>
 
 <body>
-    <div class="flex flex-col md:flex-row">
-        
-
-        {{-- Navbar --}}
-        <div class="md:hidden">
-            <div class="navbar bg-base-100 z-50 sticky top-0">
-                <div class="flex-1">
-                    <a class="btn btn-ghost normal-case text-xl" href="{{ url('/') }}">ATOP CLEAN</a>
-                    <ul class="menu menu-horizontal px-1">
-                        <li>
-                            <details>
-                                <summary>
-                                    Halaman
-                                </summary>
-                                <ul class="p-2 bg-base-100">
-                                    <li><a href="{{ url('/') }}">Daftar Pesanan</a></li>
-                                    <li><a href="{{ url('/tambah') }}">Tambah Pesanan</a></li>
-                                    <li><a href="{{ url('/history') }}">Histori</a></li>
-                                    <li><a href="{{ url('/laporan') }}">Laporan</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        {{-- End Of Navbar --}}
-
-        <!-- Main content -->
-        <div class="w-full md:w-3/4">
-            <!-- Rest of the page content here -->
-            @yield('main')
-        </div>
-        {{-- End Of Main Content --}}
-    </div>
     @inertia
 </body>
 
