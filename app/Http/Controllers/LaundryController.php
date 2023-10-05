@@ -10,7 +10,7 @@ class LaundryController extends Controller
 {
     public function index()
     {
-        $laundries = Laundry::where('done', false)->get();
+        $laundries = Laundry::where('done', false)->orderByDesc('created_at')->get();
         return view('laundry.index', compact('laundries'));
     }
 

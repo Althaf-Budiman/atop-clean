@@ -32,7 +32,7 @@
                             <a href="{{ url('/') }}">
                                 <div class="flex items-center p-3 justify-center gap-2">
                                     <i class="bi bi-journal-text text-2xl"></i>
-                                    <p class="font-medium">Daftar Pesanan</p>
+                                    <p class="font-medium">Daftar Pesanan Laundry</p>
                                 </div>
                             </a>
                         </li>
@@ -40,7 +40,7 @@
                             <a href="{{ url('/tambah') }}">
                                 <div class="flex items-center p-3 justify-center gap-2">
                                     <i class="bi bi-file-plus text-2xl"></i>
-                                    <p class="font-medium">Tambah Pesanan</p>
+                                    <p class="font-medium">Tambah Pesanan Laundry</p>
                                 </div>
                             </a>
                         </li>
@@ -48,7 +48,7 @@
                             <a href="{{ url('/history') }}">
                                 <div class="flex items-center p-3 justify-center gap-2">
                                     <i class="bi bi-clock-history text-2xl"></i>
-                                    <p class="font-medium">Histori</p>
+                                    <p class="font-medium">Histori Pesanan Laundry</p>
                                 </div>
                             </a>
                         </li>
@@ -56,7 +56,7 @@
                             <a href="{{ url('/laporan') }}">
                                 <div class="flex items-center p-3 justify-center gap-2">
                                     <i class="bi bi-bar-chart text-2xl"></i>
-                                    <p class="font-medium">Laporan</p>
+                                    <p class="font-medium">Laporan Pendapatan</p>
                                 </div>
                             </a>
                         </li>
