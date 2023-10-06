@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LaundryController::class, 'index']);
 
-Route::get('/tambah', [LaundryController::class, 'create']);
+Route::get('/create', [LaundryController::class, 'create']);
 
-Route::post('/tambah', [LaundryController::class, 'store']);
+Route::post('/create', [LaundryController::class, 'store']);
 
 Route::delete('/{id}', [LaundryController::class, 'delete']);
 
@@ -29,4 +29,4 @@ Route::patch('/{id}', [LaundryController::class, 'done']);
 
 Route::get('/history', [LaundryController::class, 'history']);
 
-Route::get('/laporan', [LaundryController::class, 'laporan']);
+Route::get('/report', [LaundryController::class, 'laporan']);
