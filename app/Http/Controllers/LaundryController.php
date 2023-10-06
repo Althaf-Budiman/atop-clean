@@ -11,9 +11,10 @@ class LaundryController extends Controller
 {
     public function index()
     {
-        // $laundries = Laundry::where('done', false)->orderByDesc('created_at')->get();
-        // return view('laundry.index', compact('laundries'));
-        return Inertia::render('Main');
+        $laundries = Laundry::where('done', false)->orderByDesc('created_at')->get();
+        return Inertia::render('Main', [
+            'laundries' => $laundries
+        ]);
     }
 
     public function create()
@@ -116,19 +117,19 @@ class LaundryController extends Controller
         $monthLaundries = Laundry::whereBetween('done_date', [$startOfMonth, $endOfMonth])->get();
 
         // Penghasilan Hari Ini
-        $incomeToday[] = 0; 
+        $incomeToday[] = 0;
         foreach ($todayLaundries as $todayLaundry) {
             $incomeToday[] = $todayLaundry->harga;
         }
-        
+
         // Penghasilan Minggu Ini
-        $incomeWeek[] = 0; 
+        $incomeWeek[] = 0;
         foreach ($weekLaundries as $weekLaundry) {
             $incomeWeek[] = $weekLaundry->harga;
         }
-        
+
         // Penghasilan Bulan Ini
-        $incomeMonth[] = 0; 
+        $incomeMonth[] = 0;
         foreach ($monthLaundries as $monthLaundry) {
             $incomeMonth[] = $monthLaundry->harga;
         }
