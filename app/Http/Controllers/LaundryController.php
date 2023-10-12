@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Laundry;
+use App\Models\Treatment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -19,7 +21,13 @@ class LaundryController extends Controller
 
     public function create()
     {
-        return view('laundry.add-laundry');
+        $categories = Category::all();
+        $treatments = Treatment::all();
+
+        return Inertia::render('Create', [
+            'categories' => $categories,
+            'treatments' => $treatments
+        ]);
     }
 
     public function store(Request $request)
@@ -32,15 +40,15 @@ class LaundryController extends Controller
             'treatment' => 'required',
             'tanggal_ambil' => 'required',
             'harga' => 'required',
-            'gambar' => 'mimes:jpg,jpeg,png'
+            'gambar' => 'nullable|mimes:jpg,jpeg,png'
         ]);
 
         // Category
-        $categoryObject = json_decode($request->category);
+        $categoryObject = Category::find($request->category);
         $request['category'] = $categoryObject->nama;
 
         // Treatment
-        $treatmentObject = json_decode($request->treatment);
+        $treatmentObject = Treatment::find($request->treatment);
         $request['treatment'] = $treatmentObject->nama;
 
         // Upload Image

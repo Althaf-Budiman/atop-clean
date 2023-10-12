@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/SearchBar";
 import LaundryList from "../components/LaundryList";
+import PageLayout from "../Layouts/PageLayout";
 
 export default function Main({ laundries }) {
     return (
@@ -14,12 +15,12 @@ export default function Main({ laundries }) {
                 </header>
             </nav>
 
-            <div class="w-full md:w-3/4">
+            <PageLayout>
                 <Searchbar />
                 <div class="flex p-5 flex-wrap justify-center gap-10 flex-col md:flex-row">
                     <LaundryList laundries={laundries} />
                 </div>
-            </div>
+            </PageLayout>
         </main>
     );
 }
