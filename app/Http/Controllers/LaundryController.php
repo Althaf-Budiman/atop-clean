@@ -101,10 +101,12 @@ class LaundryController extends Controller
     public function history()
     {
         $laundries = Laundry::where('done', true)->latest()->get();
-        return view('laundry.history-laundry', compact('laundries'));
+        return Inertia::render('History', [
+            'laundries' => $laundries
+        ]);
     }
 
-    public function laporan()
+    public function report()
     {
         // Variable Hari-hari
         $today = Carbon::today();
@@ -142,7 +144,7 @@ class LaundryController extends Controller
             $incomeMonth[] = $monthLaundry->harga;
         }
 
-        return view('laundry.laporan', [
+        return Inertia::render('Report', [
             // Total Pesanan
             'totalTodayLaundries' => count($todayLaundries),
             'totalWeekLaundries' => count($weekLaundries),

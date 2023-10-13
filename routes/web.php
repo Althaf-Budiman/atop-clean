@@ -29,4 +29,4 @@ Route::patch('/{id}', [LaundryController::class, 'done']);
 
 Route::get('/history', [LaundryController::class, 'history']);
 
-Route::get('/report', [LaundryController::class, 'laporan']);
+Route::get('/report', [LaundryController::class, 'report']);
