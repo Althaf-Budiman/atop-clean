@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Searchbar() {
-    const [search, setSearch] = useState("");
-
-    function onSearchEventChangeHandler(e) {
-        setSearch(e.target.value)
-    }
-
+export default function Searchbar({ onSearchEventChangeHandler, search }) {
     return (
         <div className="p-3">
             <form>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/SearchBar";
@@ -6,6 +6,16 @@ import LaundryList from "../components/LaundryList";
 import PageLayout from "../Layouts/PageLayout";
 
 export default function Main({ laundries }) {
+
+    const [search, setSearch] = useState("");
+    const [laundriesData, setLaundriesData] = useState(laundries);
+
+    const onSearchEventChangeHandler = (e) => {
+        setSearch(e.target.value);
+    }
+    
+    let filteredLaundry = laundriesData.filter(laundry => laundry.nama.toLowerCase().includes(search.toLowerCase()))
+
     return (
         <main className="flex flex-col md:flex-row">
             <nav>
@@ -16,9 +26,9 @@ export default function Main({ laundries }) {
             </nav>
 
             <PageLayout>
-                <Searchbar />
-                <div class="flex p-5 flex-wrap justify-center gap-10 flex-col md:flex-row">
-                    <LaundryList laundries={laundries} />
+                <Searchbar onSearchEventChangeHandler={onSearchEventChangeHandler} search={search} />
+                <div className="flex p-5 flex-wrap justify-center gap-10 flex-col md:flex-row">
+                    <LaundryList laundries={filteredLaundry} />
                 </div>
             </PageLayout>
         </main>

@@ -4,7 +4,7 @@ export default function LaundryItem({ laundry }) {
     return (
         <>
             {/* Card */}
-            <label for={"modal_detail_" + laundry.id}>
+            <label htmlFor={"modal_detail_" + laundry.id}>
                 <div className="card card-compact shadow-lg w-64 overflow-hidden">
                     <div className="hover:cursor-pointer hover:opacity-80 hover:bg-gray-100 transition">
                         <img
@@ -18,7 +18,7 @@ export default function LaundryItem({ laundry }) {
                             <div className="flex">
                                 <p className="whitespace-nowrap text-ellipsis overflow-hidden">
                                     Customer:
-                                    <b>{laundry.customer}</b>
+                                    <b> {laundry.customer}</b>
                                 </p>
                             </div>
                             <div className="flex">
@@ -55,7 +55,7 @@ export default function LaundryItem({ laundry }) {
                             </div>
                         </div>
                     </div>
-                    <label for={"modal_done_" + laundry.id}>
+                    <label htmlFor={"modal_done_" + laundry.id}>
                         <div className="bg-green-600 text-white font-semibold text-center text-5xl h-14 w-full object-cover hover:cursor-pointer hover:opacity-80 transition">
                             <i className="bi bi-check"></i>
                         </div>
@@ -78,7 +78,7 @@ export default function LaundryItem({ laundry }) {
                     </h3>
                     <div className="justify-center flex pt-4 gap-2">
                         <label
-                            for={"modal_done_" + laundry.id}
+                            htmlFor={"modal_done_" + laundry.id}
                             className="btn btn-primary w-32"
                         >
                             Belum
@@ -95,7 +95,7 @@ export default function LaundryItem({ laundry }) {
                 </div>
                 <label
                     className="modal-backdrop"
-                    for={"modal_done_" + laundry.id}
+                    htmlFor={"modal_done_" + laundry.id}
                 ></label>
             </div>
 
@@ -143,7 +143,7 @@ export default function LaundryItem({ laundry }) {
 
                             <div className="modal-action">
                                 <label
-                                    for={"modal_detail_" + laundry.id}
+                                    htmlFor={"modal_detail_" + laundry.id}
                                     className="btn btn-primary w-32"
                                 >
                                     Tutup
@@ -162,7 +162,7 @@ export default function LaundryItem({ laundry }) {
                 </div>
                 <label
                     className="modal-backdrop"
-                    for={"modal_detail_" + laundry.id}
+                    htmlFor={"modal_detail_" + laundry.id}
                 ></label>
             </div>
             {/* End modal detail */}
