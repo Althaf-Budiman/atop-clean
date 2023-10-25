@@ -55,13 +55,13 @@ export default function Create({ categories, treatments }) {
                 </div>
 
                 {/* The form */}
-                <div className="flex p-3 md:p-5">
+                <div className="flex justify-center p-8">
                     <form
                         encType="multipart/form-data"
                         className="form-control"
                         onSubmit={onSubmitEventHandler}
                     >
-                        <div className="mb-4 w-[75vw]">
+                        <div className="mb-4 w-full">
                             <label
                                 htmlFor="nama"
                                 className="text-gray-700 text-lg font-medium block"
@@ -82,7 +82,7 @@ export default function Create({ categories, treatments }) {
                             )}
                         </div>
 
-                        <div className="mb-8 w-[75vw]">
+                        <div className="mb-8 w-full">
                             <label
                                 htmlFor="customer"
                                 className="text-gray-700 text-lg font-medium block"
@@ -105,7 +105,7 @@ export default function Create({ categories, treatments }) {
                             )}
                         </div>
 
-                        <div className="mb-4 w-[75vw] flex justify-center gap-10 flex-col md:flex-row">
+                        <div className="mb-4 w-full flex md:items-center justify-center gap-10 flex-col lg:flex-row">
                             <div>
                                 <label
                                     htmlFor="category"
@@ -175,7 +175,7 @@ export default function Create({ categories, treatments }) {
                             </div>
                         </div>
 
-                        <div className="mb-10 w-[75vw] flex justify-center gap-10 flex-col md:flex-row">
+                        <div className="mb-10 w-full flex justify-center md:items-center gap-10 flex-col lg:flex-row">
                             <div>
                                 <label
                                     htmlFor="tanggal_ambil"
@@ -221,7 +221,7 @@ export default function Create({ categories, treatments }) {
                             </div>
                         </div>
 
-                        <div className="mb-4 w-[75vw]">
+                        <div className="mb-4 w-full">
                             <label
                                 htmlFor="gambar"
                                 className="text-gray-700 text-lg font-medium block"
@@ -241,7 +241,7 @@ export default function Create({ categories, treatments }) {
                             )}
                             <button
                                 type="submit"
-                                className="float-right p-3 btn mr-3 btn-primary mt-5 md:mt-0"
+                                className="md:float-right p-3 btn mr-3 btn-primary mt-5 md:mt-0"
                             >
                                 Tambah Laundry
                             </button>
