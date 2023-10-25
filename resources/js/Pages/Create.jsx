@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import PageLayout from "../Layouts/PageLayout";
@@ -233,9 +233,8 @@ export default function Create({ categories, treatments }) {
                             <input
                                 type="file"
                                 id="gambar"
-                                value={data.gambar}
-                                onChange={(e) =>
-                                    setData("gambar", e.target.value)
+                                onChange={(e) => 
+                                    setData("gambar", e.target.files[0])
                                 }
                                 className="file-input file-input-primary"
                             />

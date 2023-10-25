@@ -4,7 +4,7 @@ export default function LaundryDoneItem({ laundry }) {
     return (
         <div class="card card-compact shadow-lg w-64 overflow-hidden">
             <img
-                src={laundry.gambar || "no-image.png"}
+                src={laundry.gambar ? `/storage/${laundry.gambar}` : "no-image.png"}
                 class="h-40 w-full object-cover"
             />
             <div class="card-body">

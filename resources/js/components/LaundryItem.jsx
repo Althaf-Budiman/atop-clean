@@ -18,7 +18,7 @@ export default function LaundryItem({ laundry }) {
                 <div className="card card-compact shadow-lg w-64 overflow-hidden">
                     <div className="hover:cursor-pointer hover:opacity-80 hover:bg-gray-100 transition">
                         <img
-                            src={laundry.gambar || "no-image.png"}
+                            src={laundry.gambar ? `/storage/${laundry.gambar}` : "no-image.png"}
                             className="h-40 w-full object-cover"
                         />
                         <div className="card-body">
@@ -119,7 +119,7 @@ export default function LaundryItem({ laundry }) {
                     <div className="flex flex-col md:flex-row gap-5">
                         <div className="flex flex-col">
                             <img
-                                src={laundry.gambar || "no-image.png"}
+                                src={laundry.gambar ? `/storage/${laundry.gambar}` : "no-image.png"}
                                 className="h-40 w-full object-cover"
                             />
                             <h2 className="text-xl font-bold text-black text-center pt-2">
