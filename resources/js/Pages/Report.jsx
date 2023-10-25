@@ -20,7 +20,8 @@ export default function Report(props) {
 
                 <div class="justify-start">
                     <h1 class="font-semibold p-5 text-2xl">Laporan Pesanan</h1>
-                    <div class="flex p-5 flex-wrap justify-start gap-10">
+
+                    <div class="flex p-5 flex-wrap justify-center gap-10">
                         <div class="card w-72 bg-base-100 shadow-xl">
                             <div class="card-body">
                                 <h2 class="flex justify-center text-5xl text-[#226699] text-center">
@@ -58,7 +59,7 @@ export default function Report(props) {
                     <h1 class="font-semibold p-5 text-2xl">
                         Laporan Penghasilan
                     </h1>
-                    <div class="flex p-5 flex-wrap justify-start gap-10">
+                    <div class="flex p-5 flex-wrap justify-center gap-10">
                         <div class="card w-72 bg-base-100 shadow-xl">
                             <div class="card-body">
                                 <h2 class="flex justify-center text-5xl text-green-600 text-center">
