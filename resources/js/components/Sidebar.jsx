@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Sidebar() {
     return (
-        <nav>
+        <nav className="sticky top-0">
             <div className="w-72 hidden md:block">
-                <div className="sticky top-0 h-screen">
+                <div className="h-screen">
                     <div className="menu bg-base-200 flex flex-col h-[100vh]">
                         <div className="flex justify-center">
                             <a href="/">

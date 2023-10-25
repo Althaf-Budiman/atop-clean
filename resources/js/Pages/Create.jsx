@@ -1,8 +1,7 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
 import PageLayout from "../Layouts/PageLayout";
 import { useForm } from "@inertiajs/inertia-react";
+import Header from "../components/Header";
 
 export default function Create({ categories, treatments }) {
     const { data, setData, post, errors, reset } = useForm({
@@ -43,8 +42,7 @@ export default function Create({ categories, treatments }) {
 
     return (
         <main className="flex flex-col md:flex-row">
-            <Sidebar />
-            <Navbar />
+            <Header />
 
             <PageLayout>
                 <div className="flex justify-center pt-8 text-center">

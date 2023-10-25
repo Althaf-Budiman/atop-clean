@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <nav>
             <div className="md:hidden">
-                <div className="navbar bg-base-100 z-50 sticky top-0">
+                <div className="navbar bg-base-100 z-50">
                     <div className="flex-1">
                         <a
                             className="btn btn-ghost normal-case text-xl"

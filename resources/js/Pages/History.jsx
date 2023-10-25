@@ -1,18 +1,12 @@
 import React from "react";
 import HistoryItemList from "../components/HistoryItemList";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
 import PageLayout from "../Layouts/PageLayout";
+import Header from "../components/Header";
 
 export default function History({ laundries }) {
     return (
         <main className="flex flex-col md:flex-row">
-            <nav>
-                <header>
-                    <Sidebar />
-                    <Navbar />
-                </header>
-            </nav>
+            <Header />
 
             <PageLayout>
                 <div className="flex justify-center pt-8">

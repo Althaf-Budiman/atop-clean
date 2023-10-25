@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
 import Searchbar from "../components/SearchBar";
 import LaundryList from "../components/LaundryList";
 import PageLayout from "../Layouts/PageLayout";
+import Header from "../components/Header";
 
 export default function Main({ laundries }) {
 
@@ -18,12 +17,7 @@ export default function Main({ laundries }) {
 
     return (
         <main className="flex flex-col md:flex-row">
-            <nav>
-                <header>
-                    <Sidebar />
-                    <Navbar />
-                </header>
-            </nav>
+            <Header />
 
             <PageLayout>
                 <Searchbar onSearchEventChangeHandler={onSearchEventChangeHandler} search={search} />
