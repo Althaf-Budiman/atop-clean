@@ -75,7 +75,6 @@ class LaundryController extends Controller
     public function delete($id)
     {
         Laundry::findOrFail($id)->delete();
-        return redirect('/');
     }
 
     public function search(Request $request)

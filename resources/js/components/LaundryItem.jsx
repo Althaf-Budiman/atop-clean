@@ -1,6 +1,12 @@
+import { Inertia } from "@inertiajs/inertia";
 import React from "react";
 
 export default function LaundryItem({ laundry }) {
+
+    const OnDeleteEventHandler = () => {
+        Inertia.delete(`/${laundry.id}`);
+    }
+
     return (
         <>
             {/* Card */}
@@ -148,7 +154,7 @@ export default function LaundryItem({ laundry }) {
                                 >
                                     Tutup
                                 </label>
-                                <form action={"/" + laundry.id}>
+                                <form onSubmit={OnDeleteEventHandler}>
                                     <button
                                         type="submit"
                                         className="btn btn-error w-32"
