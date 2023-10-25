@@ -74,7 +74,7 @@ export default function Report(props) {
                                             style: "currency",
                                             currency: "IDR",
                                         }
-                                    )}
+                                    ).replace(",00", "")}
                                 </h2>
                                 <p class="flex mt-5 justify-center text-xl text-center text-gray-400">
                                     Total Penghasilan Hari Ini
@@ -91,7 +91,7 @@ export default function Report(props) {
                                             style: "currency",
                                             currency: "IDR",
                                         }
-                                    )}
+                                    ).replace(",00", "")}
                                 </h2>
                                 <p class="flex mt-5 justify-center text-xl text-center text-gray-400">
                                     Total Penghasilan Minggu Ini
@@ -108,7 +108,7 @@ export default function Report(props) {
                                             style: "currency",
                                             currency: "IDR",
                                         }
-                                    )}
+                                    ).replace(",00", "")}
                                 </h2>
                                 <p class="flex mt-5 justify-center text-xl text-center text-gray-400">
                                     Total Penghasilan Bulan Ini

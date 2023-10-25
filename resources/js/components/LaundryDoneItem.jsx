@@ -38,7 +38,7 @@ export default function LaundryDoneItem({ laundry }) {
                             {laundry.harga.toLocaleString("id", {
                                 style: "currency",
                                 currency: "IDR",
-                            })}
+                            }).replace(",00", "")}
                         </b>
                     </p>
                 </div>
