@@ -15,21 +15,24 @@ export default function History({ laundries }) {
             </nav>
 
             <PageLayout>
-                <div class="flex justify-center pt-8">
-                    <h1 class="text-3xl text-gray-600">Histori Laundry</h1>
+                <div className="flex justify-center pt-8">
+                    <h1 className="text-3xl text-gray-600">Histori Laundry</h1>
                 </div>
 
-                <div class="flex justify-center">
-                    <div class="border border-base-300 my-1 w-96"></div>
+                <div className="flex justify-center">
+                    <div className="border border-base-300 my-1 w-96"></div>
                 </div>
 
-                <div class="flex justify-center">
-                    <h1 class="text-lg text-gray-400 text-center">
+                <div className="flex justify-center">
+                    <h1 className="text-lg text-gray-400 text-center">
                         Barang yang selesai di laundry akan tampil disini.
                     </h1>
                 </div>
 
-                <HistoryItemList laundries={laundries} />
+                <div className="flex justify-center m-8 gap-8 flex-wrap">
+                    <HistoryItemList laundries={laundries} />
+                </div>
+
             </PageLayout>
         </main>
     );

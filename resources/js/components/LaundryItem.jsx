@@ -7,6 +7,10 @@ export default function LaundryItem({ laundry }) {
         Inertia.delete(`/${laundry.id}`);
     }
 
+    const OnDoneEventHandler = () => {
+        Inertia.patch(`/${laundry.id}`);
+    }
+
     return (
         <>
             {/* Card */}
@@ -89,7 +93,7 @@ export default function LaundryItem({ laundry }) {
                         >
                             Belum
                         </label>
-                        <form action={"/" + laundry.id}>
+                        <form onSubmit={OnDoneEventHandler}>
                             <button
                                 type="submit"
                                 className="h-14 w-full object-cover btn btn-success"

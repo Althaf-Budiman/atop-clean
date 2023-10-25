@@ -94,7 +94,6 @@ class LaundryController extends Controller
             'done' => true,
             'done_date' => Carbon::today(),
         ]);
-        return redirect('/');
     }
 
     public function history()
